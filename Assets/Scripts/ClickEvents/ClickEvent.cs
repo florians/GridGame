@@ -20,8 +20,6 @@ public class ClickEvent : MonoBehaviour
         GridManager parentScript = gameObject.transform.parent.transform.parent.GetComponent<GridManager>();
         if (e == Events.GoDown && isUsed == true)
         {
-            GameObject child = parentScript.transform.Find("Level_" + parentScript.level).gameObject;
-            child.SetActive(false);
             parentScript.player.LevelUp();
             parentScript.GenerateGrid();
         }

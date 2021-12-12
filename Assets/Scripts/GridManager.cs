@@ -51,11 +51,9 @@ public class GridManager : MonoBehaviour
         SetRandomNumbers();
         ClearOld();
         transform.position = new Vector2(0, 0);
-        //int blockAmount = allBlocks.Length;
         int gridCounter = 0;
         GameObject container = (GameObject)Instantiate(levelContainer, transform);
         int groundRandomNr = UnityEngine.Random.Range(0, groundTiles.Length);
-        //tile.GetComponent<SpriteRenderer>().sprite =
         defaultGroundSprite = groundTiles[groundRandomNr].GetComponent<SpriteRenderer>().sprite;
         container.name = "Level_" + level;
         for (int row = 0; row < rows; row++)
@@ -88,47 +86,37 @@ public class GridManager : MonoBehaviour
         // fallback sprite
         GameObject fallback = tile.transform.Find("Fallback").gameObject;
         fallback.GetComponent<SpriteRenderer>().sprite = defaultGroundSprite;
-        // evenet sprite
+        // event sprite
         GameObject eventSprite = tile.transform.Find("Event").gameObject;
-        
+
         if (order != 0)
         {
             if (Array.IndexOf(trapFields, gridCounter) >= 0)
             {
-                // background tile
-                //CreateTile(-1, container, x, y, 0);
-                //tile.AddComponent<TrapEvent>();
                 tile.name = "trap";
                 tileEvent.e = Events.Trap;
-                eventSprite.GetComponent<SpriteRenderer>().sprite = GetResource("events/trap").GetComponent<SpriteRenderer>().sprite; ;
             }
             // upgrade field
             else if (Array.IndexOf(upgradeField, gridCounter) >= 0)
             {
-                // background tile
-                //CreateTile(-1, container, x, y, 0);
-                //tile.AddComponent<UpgradeEvent>();
                 tile.name = "upgrade";
                 tileEvent.e = Events.Upgrade;
-                eventSprite.GetComponent<SpriteRenderer>().sprite = GetResource("events/upgrade").GetComponent<SpriteRenderer>().sprite; ;
             }
             // hp field
             else if (Array.IndexOf(hpField, gridCounter) >= 0)
             {
-                // background tile
-                //CreateTile(-1, container, x, y, 0);
-                //tile.AddComponent<HpEvent>();
                 tile.name = "hp";
                 tileEvent.e = Events.Hp;
-                eventSprite.GetComponent<SpriteRenderer>().sprite = GetResource("events/hp").GetComponent<SpriteRenderer>().sprite; ;
             }
             // down field
             else if (Array.IndexOf(goDownField, gridCounter) >= 0)
             {
-                //tile.AddComponent<GoDownEvent>();
                 tile.name = "goDown";
                 tileEvent.e = Events.GoDown;
-                eventSprite.GetComponent<SpriteRenderer>().sprite = GetResource("events/goDown").GetComponent<SpriteRenderer>().sprite; ;
+            }
+            if (tile.name != "default")
+            {
+                eventSprite.GetComponent<SpriteRenderer>().sprite = GetResource("events/" + tile.name).GetComponent<SpriteRenderer>().sprite;
             }
             int pos = Array.IndexOf(emtpyFields, gridCounter);
             if (pos == -1)
@@ -144,10 +132,6 @@ public class GridManager : MonoBehaviour
                 {
                     tileEvent.e = Events.Destroy;
                 }
-                //if (!tile.GetComponent<TrapEvent>() && !tile.GetComponent<UpgradeEvent>() && !tile.GetComponent<HpEvent>() && !tile.GetComponent<GoDownEvent>())
-                //{
-                //    tile.AddComponent<DestroyEvent>();
-                //}
             }
         }
         else
@@ -159,16 +143,12 @@ public class GridManager : MonoBehaviour
         tile.GetComponent<SpriteRenderer>().sortingOrder = order;
     }
 
-    //private GameObject TileEvent()
-    //{
-    //    GameObject t = new GameObject();
-    //    return t;
-    //}
-    //private string TileName()
-    //{
-    //    GameObject t = new GameObject();
-    //    return t;
-    //}
+    public void Replay()
+    {
+        ClearOld();
+        player.Init();
+        GenerateGrid();
+    }
 
     private void SetRandomNumbers()
     {
@@ -183,13 +163,9 @@ public class GridManager : MonoBehaviour
         level = player.currentLevel;
         emptyAmount = player.currentUpgrade;
     }
-    private void ClearOld(string amount = "")
+    private void ClearOld()
     {
-        if (transform.childCount > 1)
-        {
-            Destroy(transform.GetChild(0).gameObject);
-        }
-        if (amount == "all")
+        if (transform.childCount > 0)
         {
             for (int i = 0; i < transform.childCount; i++)
             {
@@ -232,6 +208,7 @@ public class GridManager : MonoBehaviour
             stopCounter++;
             if (stopCounter >= 400)
             {
+                Debug.Log("overflow error");
                 return numbers;
             }
         }

@@ -15,11 +15,6 @@ public class Player : ScriptableObject
     public int currentHp;
     public int currentUpgrade;
 
-    //public Player()
-    //{
-    //    Init();
-    //}
-
     public void Init()
     {
         currentLevel = baseLevel;
@@ -48,7 +43,7 @@ public class Player : ScriptableObject
         }
         if (currentHp == 0)
         {
-            //uiObj.transform.Find("KillScreen").gameObject.SetActive(true);
+            KillScreen.push = true;
         }
         UpdateUi();
     }
