@@ -1,34 +1,31 @@
 fileFormatVersion: 2
-guid: 9d4f0da24c5e1df47885452c9c3918ce
+guid: 3518160b78e65694a82b70da27099c27
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4601138545785346790
-    second: crack_sprites_0
+      213: -5680765306392196936
+    second: lava_sprite_0
   - first:
-      213: -6444918165869645971
-    second: crack_sprites_1
+      213: -487036541668760063
+    second: lava_sprite_1
   - first:
-      213: -3725257094710642365
-    second: crack_sprites_2
+      213: 7501008642655346697
+    second: lava_sprite_2
   - first:
-      213: -2040392615404727121
-    second: crack_sprites_3
+      213: 3441083794518949287
+    second: lava_sprite_3
   - first:
-      213: 3429608386146608664
-    second: crack_sprites_4
+      213: 2847280462625504071
+    second: lava_sprite_4
   - first:
-      213: 8624230143488351976
-    second: crack_sprites_5
+      213: 5715323447598890726
+    second: lava_sprite_5
   - first:
-      213: -884795435466147721
-    second: crack_sprites_6
+      213: -1788624190969222565
+    second: lava_sprite_6
   - first:
-      213: -7293843532848468284
-    second: crack_sprites_7
-  - first:
-      213: -2515370081435233097
-    second: crack_sprites_8
+      213: 5713731503139863370
+    second: lava_sprite_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -130,28 +127,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: crack_sprites_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1024
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a156b18ded87520c0800000000000000
-      internalID: -4601138545785346790
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: crack_sprites_1
+      name: lava_sprite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -165,14 +141,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6fa0e4231d0f86a0800000000000000
-      internalID: -6444918165869645971
+      spriteID: 8b841244d0ed921b0800000000000000
+      internalID: -5680765306392196936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crack_sprites_2
+      name: lava_sprite_1
       rect:
         serializedVersion: 2
         x: 0
@@ -186,14 +162,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 349b4ccd86a3d4cc0800000000000000
-      internalID: -3725257094710642365
+      spriteID: 106e23588d2bd39f0800000000000000
+      internalID: -487036541668760063
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crack_sprites_3
+      name: lava_sprite_2
       rect:
         serializedVersion: 2
         x: 0
@@ -207,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa4987c0ab11fa3e0800000000000000
-      internalID: -2040392615404727121
+      spriteID: 9006b925e9fe81860800000000000000
+      internalID: 7501008642655346697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crack_sprites_4
+      name: lava_sprite_3
       rect:
         serializedVersion: 2
         x: 0
@@ -228,14 +204,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81628f608aa689f20800000000000000
-      internalID: 3429608386146608664
+      spriteID: 7adb7aeba7f21cf20800000000000000
+      internalID: 3441083794518949287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crack_sprites_5
+      name: lava_sprite_4
       rect:
         serializedVersion: 2
         x: 0
@@ -249,14 +225,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8eed6d35f9b6fa770800000000000000
-      internalID: 8624230143488351976
+      spriteID: 74bf3b6ce72938720800000000000000
+      internalID: 2847280462625504071
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crack_sprites_6
+      name: lava_sprite_5
       rect:
         serializedVersion: 2
         x: 0
@@ -270,14 +246,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77837224d3398b3f0800000000000000
-      internalID: -884795435466147721
+      spriteID: 6eeb79ef468e05f40800000000000000
+      internalID: 5715323447598890726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crack_sprites_7
+      name: lava_sprite_6
       rect:
         serializedVersion: 2
         x: 0
@@ -291,14 +267,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ce694983ff07ca90800000000000000
-      internalID: -7293843532848468284
+      spriteID: b5aeb9c56c78d27e0800000000000000
+      internalID: -1788624190969222565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crack_sprites_8
+      name: lava_sprite_7
       rect:
         serializedVersion: 2
         x: 0
@@ -312,8 +288,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b45869ec3c971dd0800000000000000
-      internalID: -2515370081435233097
+      spriteID: a4b3c9a87804b4f40800000000000000
+      internalID: 5713731503139863370
       vertices: []
       indices: 
       edges: []

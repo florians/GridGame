@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class KillScreen : MonoBehaviour
 {
@@ -14,7 +11,7 @@ public class KillScreen : MonoBehaviour
     void Update()
     {
         if (push) {
-            transform.Find("KillScreen").gameObject.SetActive(true);
+            transform.GetChild(1).gameObject.SetActive(true);
             push = false;
         }
     }

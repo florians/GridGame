@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1008233942299930353}
   - component: {fileID: 7900667410515052531}
   m_Layer: 0
-  m_Name: Crack
+  m_Name: 1_Crack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 4438138630777894321}
   - component: {fileID: 1722430493456603508}
   m_Layer: 0
-  m_Name: Fallback
+  m_Name: 0_Fallback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 8442925104445012037}
   - component: {fileID: 7914095226228906294}
   m_Layer: 0
-  m_Name: Event
+  m_Name: 2_Event
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

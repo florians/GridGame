@@ -1,8 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GridManager : MonoBehaviour
 {
@@ -84,10 +82,10 @@ public class GridManager : MonoBehaviour
         tile.AddComponent<ClickEvent>();
         ClickEvent tileEvent = tile.GetComponent<ClickEvent>();
         // fallback sprite
-        GameObject fallback = tile.transform.Find("Fallback").gameObject;
+        GameObject fallback = tile.transform.GetChild(0).gameObject;
         fallback.GetComponent<SpriteRenderer>().sprite = defaultGroundSprite;
         // event sprite
-        GameObject eventSprite = tile.transform.Find("Event").gameObject;
+        GameObject eventSprite = tile.transform.GetChild(2).gameObject;
 
         if (order != 0)
         {
@@ -95,6 +93,8 @@ public class GridManager : MonoBehaviour
             {
                 tile.name = "trap";
                 tileEvent.e = Events.Trap;
+                eventSprite.AddComponent<Animator>();
+                eventSprite.GetComponent<Animator>().runtimeAnimatorController = GetResource("events/" + tile.name).GetComponent<Animator>().runtimeAnimatorController;
             }
             // upgrade field
             else if (Array.IndexOf(upgradeField, gridCounter) >= 0)
@@ -182,9 +182,9 @@ public class GridManager : MonoBehaviour
     public void OnClickEvent(GameObject obj)
     {
         obj.GetComponent<SpriteRenderer>().enabled = false;
-        obj.transform.Find("Fallback").GetComponent<SpriteRenderer>().enabled = true;
-        obj.transform.Find("Crack").GetComponent<Animator>().enabled = true;
-        obj.transform.Find("Event").GetComponent<SpriteRenderer>().enabled = true;
+        obj.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+        obj.transform.GetChild(1).GetComponent<Animator>().enabled = true;
+        obj.transform.GetChild(2).GetComponent<SpriteRenderer>().enabled = true;
     }
 
     private int[] NrGenerator(int start, int end, int amount)
