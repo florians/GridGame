@@ -94,7 +94,12 @@ public class GridManager : MonoBehaviour
                 tile.name = "trap";
                 tileEvent.e = Events.Trap;
                 eventSprite.AddComponent<Animator>();
+                eventSprite.AddComponent<SpriteMask>();
                 eventSprite.GetComponent<Animator>().runtimeAnimatorController = GetResource("events/" + tile.name).GetComponent<Animator>().runtimeAnimatorController;
+                eventSprite.GetComponent<Animator>().updateMode = AnimatorUpdateMode.UnscaledTime;
+                eventSprite.GetComponent<SpriteMask>().sprite = GetResource("events/" + tile.name).GetComponent<SpriteMask>().sprite;
+                eventSprite.GetComponent<SpriteMask>().alphaCutoff = 0.3f;
+                eventSprite.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
             }
             // upgrade field
             else if (Array.IndexOf(upgradeField, gridCounter) >= 0)
